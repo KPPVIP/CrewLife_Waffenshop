@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="ui.js"></script>
+<meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>by meerbi.design</title>
+<style id="applicationStylesheet" type="text/css">
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+body::-webkit-scrollbar {
+  display: none;
+}
+body {
+    user-select: none;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+* {
+	font-family: Poppins;
+}
+	.mediaViewInfo {
+		--web-view-name: Canvas;
+		--web-view-id: Canvas;
+		--web-scale-to-fit: true;
+		--web-scale-to-fit-type: width;
+		--web-enable-scale-up: true;
+		--web-scale-on-resize: true;
+		--web-center-vertically: true;
+		--web-enable-deep-linking: true;
+	}
+	:root {
+		--web-view-ids: Canvas;
+	}
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		border: none;
+	}
+	#Canvas {
+		position: absolute;
+		width: 1920px;
+		height: 1080px;
+		background-color: rgba(0,0,0,0);
+		overflow: hidden;
+		--web-view-name: Canvas;
+		--web-view-id: Canvas;
+		--web-scale-to-fit: true;
+		--web-scale-to-fit-type: width;
+		--web-enable-scale-up: true;
+		--web-scale-on-resize: true;
+		--web-center-vertically: true;
+		--web-enable-deep-linking: true;
+	}
+	.container {
+        display:  none;
+		-webkit-animation: slide-in-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+            animation: slide-in-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+		position: absolute;
+		width: 1157px;
+		height: 476px;
+		left: 382px;
+		top: 302px;
+		overflow: visible;
+	}
+
+	@-webkit-keyframes slide-in-top {
+  0% {
+    -webkit-transform: translateY(-1000px);
+            transform: translateY(-1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-top {
+  0% {
+    -webkit-transform: translateY(-1000px);
+            transform: translateY(-1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+	#bg {
+		position: absolute;
+		width: 1157px;
+		height: 476px;
+		left: 0px;
+		top: 0px;
+		overflow: visible;
+	}
+	#logo {
+		position: absolute;
+		width: 250px;
+		height: 250px;
+		left: 48.5px;
+		top: 113px;
+		overflow: visible;
+	}
+	#close {
+		position: absolute;
+		width: 30px;
+		height: 30px;
+		left: 970px;
+		top: 17px;
+		overflow: visible;
+	}
+	#shooop_4 {
+		fill: rgba(19,19,19,1);
+	}
+	.shooop_4 {
+		position: absolute;
+		overflow: visible;
+		width: 30px;
+		height: 30px;
+		left: 0px;
+		top: 0px;
+	}
+	#x_1 {
+		position: absolute;
+		width: 12px;
+		height: 12px;
+		left: 9px;
+		top: 9px;
+		overflow: visible;
+	}
+	.close {
+}
+
+
+p.desc {
+    z-index: 1000;
+    color: #01aafd;
+    text-align: center;
+    margin-top: -5px;
+    font-size: 18px;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+p.title {
+    z-index: 1000;
+    color: #fff;
+    text-align: center;
+    margin-top: 100px;
+    font-size: 22px;
+    letter-spacing: 1px;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+.items-content {
+    z-index: 1000;
+    position: relative;
+    width: 450px;
+    height: 400px;
+    float: left;
+    top: 50px;
+    left: 200px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.items-content::-webkit-scrollbar {
+    z-index: 1000;
+    width: 8px;
+    height: 15px;
+    border-radius: 15px;
+}
+
+.items-content::-webkit-scrollbar-track {
+    z-index: 1000;
+    border-radius: 15px;
+    background-color: transparent;
+}
+
+.items-content::-webkit-scrollbar-thumb {
+    z-index: 1000;
+    background-color:#01aafd;
+    border-radius: 15px;
+    -webkit-box-shadow: rgba(0,0,0,.12) 0 3px 13px 1px;
+}
+
+.items-element {
+    z-index: 1000;
+    position: relative;
+    width: 120px;
+    height: 110px;
+    background-color: transparent;
+    display: inline-block;
+    margin-left: 15px;
+    margin-top: -105px;
+    border-bottom:  1px solid #01aafd;
+
+    border-radius: 10px;
+}
+
+.items-element2 {
+    z-index: 1000;
+    position: relative;
+    width: 120px;
+    height: 110px;
+    background-color: rgba(0, 0, 0, 0.2);
+    display: inline-block;
+    margin-left: 15px;
+    margin-top: 3px;
+
+    border-bottom:  3px solid #01aafd;
+
+
+    border-radius: 0px;
+}
+
+.items-element-inner {
+    z-index: 1000;
+    position: relative;
+    border-radius: 5px 5px 0 0;
+    width: 100%;
+    height: 150px;
+    top: -30px;
+    color:  #01aafd;
+    background-size: 50px;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-position: center;
+}
+
+.items-element:hover {
+    z-index: 1000;
+    transition: 500ms;
+    transform: scale(1.05, 1.05);
+}
+
+.items-element2:hover {
+    z-index: 1000;
+}
+ 
+.items-element-sub {
+    z-index: 1000;
+    position: relative;
+    width: 100%;
+    height: 110px;
+    font-weight: 600;
+    background-color: transparent;
+    top: -151px;
+    border-radius: 12px;
+    color:  #01aafd;
+    line-height: 190px;
+    text-align: center;
+    font-size: 13px;
+}
+
+.items-element-sub:hover {
+    opacity: .7;
+}
+
+.warenkorb {
+    z-index: 1000;
+    position: relative;
+    float: right;
+    top: 50px;
+    right: 200px;
+    width: 300px;
+    height: 390px;
+    color: #01aafd;
+    text-align: center;
+    border-radius: 10px;
+    border:  1px solid #01aafd;
+    background-color: transparent;
+}
+.warenkorb h1 {
+    margin-top:  10px;
+    z-index: 1000;
+    font-size: 12px;
+    text-align: center;
+    color: #ababab;
+}
+
+.warenkorb .warenkorb-preis {
+    margin-top:  5px;
+    z-index: 1000;
+    font-weight: 600;
+    text-align: center;
+    color: #ababab;
+    font-size: 12px;
+}
+
+.warenkorb .warenkorb-zahl {
+    z-index: 1000;
+    font-weight: 600;
+    text-align: center;
+    color: #01aafd;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 40px;
+    padding-left: 50px;
+    padding-right: 75px;
+    border:  1px solid #01aafd;
+    background-color: transparent;
+    font-size: 12px;
+    border-radius: 5px;
+    margin: auto;
+    white-space: nowrap;
+}
+
+.warenkorb-list {
+    z-index: 1000;
+    position: relative;
+    width: 85%;
+    height: 250px;
+    margin-left: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.warenkorb-list::-webkit-scrollbar {
+    z-index: 1000;
+    width: 5px;
+    height: 15px;
+}
+
+.warenkorb-list::-webkit-scrollbar-track {
+    z-index: 1000;
+    border-radius: 0px;
+    background-color: transparent;
+}
+
+.warenkorb-list::-webkit-scrollbar-thumb {
+    z-index: 1000;
+    background-color: transparent;
+}
+
+.warenkorb-list-elem {
+    z-index: 1000;
+    position: relative;
+    width: 99%;
+    height: 25px;
+    float: left;
+    margin-top: 10px;
+    font-weight: 600;
+    background-color: rgba(3, 1, 1, 0.247);
+    border-radius: 5px;
+}
+
+.warenkorb-list-elem p {
+    z-index: 1000;
+    text-align: center;
+    position: relative;
+    font-size: 13px;
+    line-height: 5px;
+    margin-top:  5px;
+    margin-right: 10px;
+    padding-left: 10px;
+}
+
+
+button {
+    z-index: 1000;
+    top: -10px;
+    position: relative;
+    width: 50%;
+    height: 25px;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 20px;
+    border-radius: 2px;
+    background-color: #01aafd;
+    outline: none;
+    border: none;
+}
+
+button:hover {
+    z-index: 1000;
+    cursor: pointer;
+    transform: scale(1.1, 1.1);
+    transition: 500ms;
+}
+</style>
+<script id="applicationScript" type="text/javascript" src="rescale.js"></script>
+</head>
+<body>
+<div id="Canvas">
+	<div class="container">
+		<img id="bg" src="https://cdn.discordapp.com/attachments/788240573382787114/883386424697700362/bg_1_Kopie_2_Kopie.png">
+			
+		<div id="items-content" class="items-content">
+                    
+        </div>
+        <div class="warenkorb">
+                    <h1>WARENKORB</h1>
+                    <div class="divider"></div>
+                    <div id="warenkorb-list" class="warenkorb-list">
+                        
+                    </div>
+                    <p class="warenkorb-preis">PREIS</p>
+                    <p class="warenkorb-zahl" id="warenkorb-1">0 $</p>
+                    <br>
+                    <button type="button" onclick="buy()">KAUFEN</button>
+        </div>
+		<span class="close">
+			<div id="close">
+				<svg class="shooop_4">
+					<rect id="shooop_4" rx="5" ry="5" x="0" y="0" width="30" height="30">
+					</rect>
+				</svg>
+				<img id="x_1" src="https://cdn.discordapp.com/attachments/788240573382787114/882963469987610653/x_1_Kopie.png">	
+			</div>
+		</span>
+	</div>
+</div>
+</body>
+</html>
